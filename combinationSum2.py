@@ -22,3 +22,6 @@ class Solution:
                 backTrack(cur, i + 1, target - candidates[i])
                 cur.pop()
                 prev = candidates[i]
+
+        backTrack([],0,target)
+        return res
