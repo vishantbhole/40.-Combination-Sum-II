@@ -13,3 +13,12 @@ class Solution:
                 res.append(cur.copy())
             if target <= 0:
                 return
+
+            prev = -1
+            for i in range(pos, len(candidates)):
+                if candidates[i] == prev:
+                    continue
+                cur.append(candidates[i])
+                backTrack(cur, i + 1, target - candidates[i])
+                cur.pop()
+                prev = candidates[i]
